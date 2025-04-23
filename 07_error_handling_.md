@@ -18,7 +18,7 @@ Without good error handling, you might miss critical security threats or unneces
 pyDICOS provides a robust error handling system through the `ErrorLog` class. Think of it as a digital logbook that records any issues that occur during operation. Just like a pilot's logbook records flight issues, the `ErrorLog` captures problems in your security imaging operations.
 
 ```python
-from pyDICOS import ErrorLog, CTLoader
+from pydicos import ErrorLog, CTLoader
 
 # Create an error log
 error_log = ErrorLog()
@@ -118,7 +118,8 @@ This creates a text file containing all errors and warnings, which can be extrem
 In larger systems, you might want to route error messages to different places - like a central monitoring dashboard or an email alert system. pyDICOS allows you to redirect error logs:
 
 ```python
-from pyDICOS import ErrorLog, REDIRECT_LOG_TYPE
+from pydicos import ErrorLog
+from pyDICOS import REDIRECT_LOG_TYPE
 
 # Define a function to handle redirected logs
 def my_error_handler(message, log_type):
@@ -200,7 +201,7 @@ This design makes error handling in pyDICOS both flexible and powerful.
 Let's put everything together to create a more robust version of the security scanner from previous chapters:
 
 ```python
-from pyDICOS import CTLoader, ErrorLog
+from pydicos import CTLoader, ErrorLog
 import os
 
 def scan_luggage(luggage_id):

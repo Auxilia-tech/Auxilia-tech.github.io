@@ -39,7 +39,7 @@ sequenceDiagram
 To process incoming data, you need to create a callback class that inherits from `IReceiveCallback` or one of its subclasses like `DataProcessingMultipleConnections`:
 
 ```python
-from pyDICOS import DataProcessingMultipleConnections
+from pydicos import DataProcessingMultipleConnections
 import numpy as np
 
 class MyDataProcessor(DataProcessingMultipleConnections):
@@ -69,7 +69,7 @@ This simple callback prints a message when CT data is received, takes ownership 
 To use your callback, you need to register it with a `DcsServer` (which we learned about in [Chapter 3: Network Communication](03_network_communication_.md)):
 
 ```python
-from pyDICOS import DcsServer
+from pydicos import DcsServer
 
 # Create your callback processor
 processor = MyDataProcessor()
@@ -262,7 +262,7 @@ When data arrives, it's initially owned by the pyDICOS system. If you want to ke
 Let's put everything together to create a security inspection station that processes incoming scans and displays them to an analyst:
 
 ```python
-from pyDICOS import DataProcessingMultipleConnections, DcsServer
+from pydicos import DataProcessingMultipleConnections, DcsServer
 import matplotlib.pyplot as plt
 from threading import Thread
 import queue

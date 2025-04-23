@@ -32,7 +32,7 @@ The `dcsread` function is like a smart assistant that:
 Here's a simple example:
 
 ```python
-from pyDICOS import dcsread
+from pydicos import dcsread
 import matplotlib.pyplot as plt
 
 # Let dcsread figure out the file type automatically
@@ -63,7 +63,7 @@ In this example, we didn't need to know what type of file we were opening before
 Saving DICOS objects is just as easy with `dcswrite`. No matter what type of DICOS object you have, this function saves it to disk:
 
 ```python
-from pyDICOS import dcsread, dcswrite
+from pydicos import dcsread, dcswrite
 import numpy as np
 
 # Read an existing CT scan
@@ -89,7 +89,7 @@ In this example, we:
 Let's see a more practical example where we need to process a folder of different DICOS files:
 
 ```python
-from pyDICOS import dcsread, dcswrite
+from pydicos import dcsread, dcswrite
 import os
 import matplotlib.pyplot as plt
 
@@ -216,7 +216,7 @@ def dcswrite(dcs: Union[CTLoader, DXLoader, TDRLoader], filename: Union[str, Pat
 Sometimes you already know what type of file you're working with. In these cases, you can provide a pre-created loader to `dcsread`:
 
 ```python
-from pyDICOS import dcsread, CTLoader
+from pydicos import dcsread, CTLoader
 
 # Create a CT loader specifically
 ct_loader = CTLoader()
@@ -237,7 +237,7 @@ This approach is slightly more efficient since `dcsread` doesn't have to try dif
 Sometimes you might try to read a file that isn't a valid DICOS file. Let's handle this gracefully:
 
 ```python
-from pyDICOS import dcsread
+from pydicos import dcsread
 import os
 
 def safe_read_dicos(filepath):

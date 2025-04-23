@@ -29,7 +29,7 @@ Think of CT as a stack of 2D image slices that together form a 3D representation
 **Example:** Loading and viewing a CT scan:
 
 ```python
-from pyDICOS import CTLoader
+from pydicos import CTLoader
 import matplotlib.pyplot as plt
 
 # Load a CT scan file
@@ -56,7 +56,7 @@ Unlike CT, DX provides a single 2D projection of an object, with overlapping str
 **Example:** Loading and viewing a DX image:
 
 ```python
-from pyDICOS import DXLoader
+from pydicos import DXLoader
 import matplotlib.pyplot as plt
 
 # Load a DX image file
@@ -82,7 +82,7 @@ While CT and DX contain the raw imaging data, TDR files store information about 
 **Example:** Loading and analyzing a threat report:
 
 ```python
-from pyDICOS import TDRLoader
+from pydicos import TDRLoader
 
 # Load a TDR file
 tdr_data = TDRLoader("baggage_threats.tdr")
@@ -113,7 +113,7 @@ These three data types work together in a typical security screening workflow:
 In fact, you can generate a TDR from a CT scan with detected threats:
 
 ```python
-from pyDICOS import CTLoader
+from pydicos import CTLoader
 import numpy as np
 
 # Load a CT scan

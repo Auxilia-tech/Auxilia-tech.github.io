@@ -42,7 +42,7 @@ The `DcsClient` class handles:
 Let's look at a simple example where we send a CT scan to a server:
 
 ```python
-from pyDICOS import CTLoader, dcsread, DcsClient
+from pydicos import CTLoader, dcsread, DcsClient
 
 # Set up the client
 client = DcsClient()
@@ -98,7 +98,7 @@ The `DcsServer` class handles:
 Let's create a simple server that receives CT scans:
 
 ```python
-from pyDICOS import DcsServer
+from pydicos import DcsServer
 
 # Create a callback to handle received data
 class ScanReceiver:
@@ -160,7 +160,7 @@ sequenceDiagram
 Here's how to implement a client at a CT scanner:
 
 ```python
-from pyDICOS import CTLoader, DcsClient
+from pydicos import CTLoader, DcsClient
 import time
 
 class SecurityScanner:
@@ -194,7 +194,7 @@ class SecurityScanner:
 And here's the server at the security center:
 
 ```python
-from pyDICOS import DcsServer
+from pydicos import DcsServer
 import threading
 
 class SecurityCenter:
@@ -243,38 +243,38 @@ Let's look at what happens behind the scenes when a client sends data to a serve
 ```mermaid
 sequenceDiagram
     participant Client as DcsClient
-    participant DICOM as DICOM Protocol
+    participant DICOS as DICOS Protocol
     participant Network as Network Layer
     participant Server as DcsServer
     participant Callback as User Callback
     
     Client->>Network: ConnectToServer()
     Network->>Server: TCP Connection
-    Client->>DICOM: StartDicosSession()
-    DICOM->>Network: DICOM Association Request
+    Client->>DICOS: StartDicosSession()
+    DICOS->>Network: DICOS Association Request
     Network->>Server: Transfer Association
-    Server->>DICOM: Process Association
-    DICOM->>Client: Association Established
-    Client->>DICOM: SendCT(data)
-    DICOM->>Network: DICOM P-DATA with CT
+    Server->>DICOS: Process Association
+    DICOS->>Client: Association Established
+    Client->>DICOS: SendCT(data)
+    DICOS->>Network: DICOS P-DATA with CT
     Network->>Server: Transfer Data
-    Server->>DICOM: Process Data
-    DICOM->>Callback: OnReceivingCT()
+    Server->>DICOS: Process Data
+    DICOS->>Callback: OnReceivingCT()
     Callback-->>Server: Return processing result
-    Client->>DICOM: StopDicosSession()
-    DICOM->>Network: DICOM Release
+    Client->>DICOS: StopDicosSession()
+    DICOS->>Network: DICOS Release
     Network->>Server: Transfer Release
     Client->>Network: DisconnectFromServer()
     Network->>Server: Close TCP Connection
 ```
 
-The pyDICOS network classes use the DICOM protocol (the medical imaging standard that DICOS is based on) for communication. This provides a reliable, standardized way to transfer complex imaging data.
+The pyDICOS network classes use the DICOS protocol (the medical imaging standard that DICOS is based on) for communication. This provides a reliable, standardized way to transfer complex imaging data.
 
-When you call `ConnectToServer()`, a TCP connection is established. The `StartDicosSession()` initiates a DICOM association, specifying which types of data will be transferred. The actual data transfer happens with methods like `SendCT()`, which package the data according to the DICOM protocol before sending it over the network.
+When you call `ConnectToServer()`, a TCP connection is established. The `StartDicosSession()` initiates a DICOS association, specifying which types of data will be transferred. The actual data transfer happens with methods like `SendCT()`, which package the data according to the DICOS protocol before sending it over the network.
 
 ## Security Considerations
 
-Security is crucial when transmitting sensitive screening data. pyDICOS supports SSL/TLS encryption:
+Security is crucial when transmitting sensitive screening data. pydicos supports SSL/TLS encryption:
 
 ```python
 # On the client
@@ -293,7 +293,7 @@ This ensures that all data is encrypted during transmission, protecting it from 
 
 ## Implementation Details
 
-The network classes in pyDICOS are C++ wrappers around the DICOM networking protocol. The Python bindings provide a simple interface to this complex functionality:
+The network classes in pydicos are C++ wrappers around the DICOS networking protocol. The Python bindings provide a simple interface to this complex functionality:
 
 - `DcsClient` maps to `Network::DcsClient` in C++
 - `DcsServer` maps to `Network::DcsServer` in C++
@@ -303,7 +303,7 @@ The `export_DCSCLIENT` and `export_DCSSERVER` functions in the C++ code create t
 For example, when you call `client.SendCT(ct_data)` in Python, the following happens:
 1. The Python wrapper converts the `ct_data` object to its C++ representation
 2. The C++ `SendCT` method is called with this data
-3. The C++ code handles the DICOM protocol details and network transmission
+3. The C++ code handles the DICOS protocol details and network transmission
 4. The result is returned back to Python
 
 This approach gives you the ease of use of Python with the performance of C++ for handling the complex protocols and large data transfers.

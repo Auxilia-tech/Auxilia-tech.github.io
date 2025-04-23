@@ -44,7 +44,7 @@ Think of `Array2D` as a grid of pixels, where each pixel has a value representin
 Here's a simple example of creating and working with an `Array2D`:
 
 ```python
-from pyDICOS import Array2DUInt16  # For 16-bit unsigned integers
+from pydicos import Array2DUInt16  # For 16-bit unsigned integers
 import matplotlib.pyplot as plt
 
 # Create a new 2D array (width=100, height=80)
@@ -98,7 +98,8 @@ When you have 3D data like a CT scan, you need `Array3DLarge`. It represents a 3
 Here's how to create and work with a 3D volume:
 
 ```python
-from pyDICOS import Array3DLargeUInt16, VOLUME_MEMORY_POLICY
+from pydicos import Array3DLargeUInt16
+from pyDICOS import VOLUME_MEMORY_POLICY
 import numpy as np
 
 # Create a volume (width=100, height=80, depth=50)
@@ -150,7 +151,8 @@ While `Array3DLarge` provides basic 3D data storage, the `Volume` class offers h
 Here's a basic example:
 
 ```python
-from pyDICOS import Volume, IMAGE_DATA_TYPE
+from pydicos import Volume
+from pyDICOS import IMAGE_DATA_TYPE
 import numpy as np
 
 # Create a Volume with 16-bit unsigned integer data
@@ -197,7 +199,7 @@ Since many data processing libraries in Python use NumPy arrays, pyDICOS makes i
 
 ```python
 import numpy as np
-from pyDICOS import Array2DUInt16, Volume
+from pydicos import Array2DUInt16, Volume
 
 # Convert an Array2D to NumPy
 image = Array2DUInt16(100, 80)
@@ -261,7 +263,8 @@ Security imaging data can be very large. A typical CT scan might be 512×512×60
 The `Array3DLarge` class offers different memory policies:
 
 ```python
-from pyDICOS import Array3DLargeUInt16, VOLUME_MEMORY_POLICY
+from pydicos import Array3DLargeUInt16
+from pyDICOS import VOLUME_MEMORY_POLICY
 
 # Create a volume that owns its slices (default)
 volume1 = Array3DLargeUInt16(100, 80, 50, VOLUME_MEMORY_POLICY.OWNS_SLICES)
@@ -283,7 +286,7 @@ This flexibility is crucial for complex systems where memory efficiency matters.
 Here's how you might process a CT scan using pyDICOS data structures:
 
 ```python
-from pyDICOS import dcsread, Volume
+from pydicos import dcsread, Volume
 import numpy as np
 import matplotlib.pyplot as plt
 

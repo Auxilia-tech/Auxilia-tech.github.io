@@ -28,7 +28,7 @@ Think of **Point3D** as a pushpin marking a specific spot, while **Vector3D** is
 Let's start with a basic example:
 
 ```python
-from pyDICOS import Point3DFloat
+from pydicos import Point3DFloat
 
 # Create a point at coordinates (10.5, 20.0, 30.5)
 point = Point3DFloat(10.5, 20.0, 30.5)
@@ -87,7 +87,7 @@ While `Point3D` represents a location, `Vector3D` represents direction and magni
 Here's a basic example:
 
 ```python
-from pyDICOS import Vector3DFloat, Point3DFloat
+from pydicos import Vector3DFloat, Point3DFloat
 
 # Create a vector directly with coordinates
 vector1 = Vector3DFloat(5.0, 10.0, 15.0)
@@ -108,7 +108,7 @@ This example demonstrates creating vectors either directly or from a point. Like
 Vectors are particularly useful for representing the size or extent of objects:
 
 ```python
-from pyDICOS import Point3DFloat, Vector3DFloat
+from pydicos import Point3DFloat, Vector3DFloat
 
 # Define the center position of a suspicious object
 object_center = Point3DFloat(150.0, 200.0, 75.0)
@@ -137,7 +137,7 @@ In this example, we defined the center position of an object using a `Point3DFlo
 Let's put everything together in a real-world example: marking a potential threat in a CT scan.
 
 ```python
-from pyDICOS import CTLoader, TDRLoader, Point3DFloat, Vector3DFloat
+from pydicos import CTLoader, TDRLoader, Point3DFloat, Vector3DFloat
 
 # Load a CT scan
 ct_scan = CTLoader("baggage_scan.ct")
@@ -187,7 +187,7 @@ This is a common workflow in security screening systems, where automated detecti
 To better understand how these geometry classes are used, let's visualize a marked threat in a CT scan:
 
 ```python
-from pyDICOS import CTLoader, TDRLoader
+from pydicos import CTLoader, TDRLoader
 import numpy as np
 import matplotlib.pyplot as plt
 

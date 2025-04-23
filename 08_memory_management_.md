@@ -91,7 +91,7 @@ The core of pyDICOS's memory management is the `CustomMemoryManager` class. Thin
 Here's how to create and use a custom memory manager:
 
 ```python
-from pyDICOS import CustomMemoryManager, CTLoader
+from pydicos import CustomMemoryManager, CTLoader
 
 # Create a memory manager with:
 # - 8MB buffer size (enough for one slice)
@@ -145,7 +145,7 @@ This cycle of allocation and deallocation happens entirely within your memory ma
 Let's create a simple example that shows the benefit of memory management when processing a series of images:
 
 ```python
-from pyDICOS import CustomMemoryManager, Array2DUInt16
+from pydicos import CustomMemoryManager, Array2DUInt16
 import time
 
 def process_without_memory_manager():
@@ -194,7 +194,7 @@ This example is simplified, but it demonstrates the concept. In a real pyDICOS a
 Let's look at a more realistic example in a security scanning context:
 
 ```python
-from pyDICOS import CTLoader, CustomMemoryManager, dcsread
+from pydicos import CTLoader, CustomMemoryManager, dcsread
 import numpy as np
 
 # Set up a memory manager for a typical CT scan
