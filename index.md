@@ -5,7 +5,7 @@
 **pydicos** is a python wrapper over Stratovan's C++ implementation and offer high level API. Original C++ API translation is accessible via the **pyDICOS** library.
 
 <div align="center">
-<img width="850" src="https://github.com/Auxilia-tech/pyDICOS/blob/main/assets/DICOS.svg">
+<img width="850" src="assets/DICOS.svg">
 </div>
 
 **Source Repository:** [https://github.com/Auxilia-tech/pyDICOS](https://github.com/Auxilia-tech/pyDICOS)
