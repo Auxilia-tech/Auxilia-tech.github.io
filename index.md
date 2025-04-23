@@ -2,6 +2,11 @@
 
 **pyDICOS** is a Python library for working with **DICOS** (Digital Imaging and Communications for Security) data - a standard for security screening images. It provides tools to read, write, and process security imaging data like **CT scans** (3D baggage scans), **DX** (2D X-rays), and **TDR** (Threat Detection Reports). The library enables both file operations and real-time network transmission of security scan data, making it useful for developing advanced security screening applications and threat detection systems.
 
+**pydicos** is a python wrapper over Stratovan's C++ implementation and offer high level API. Original C++ API translation is accessible via the **pyDICOS** library.
+
+<div align="center">
+<img width="850" src="https://github.com/Auxilia-tech/pyDICOS/blob/main/assets/DICOS.svg">
+</div>
 
 **Source Repository:** [https://github.com/Auxilia-tech/pyDICOS](https://github.com/Auxilia-tech/pyDICOS)
 
