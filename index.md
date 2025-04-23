@@ -36,21 +36,21 @@ flowchart TD
 ## Chapters
 
 1. [DICOS Data Types (CT, DX, TDR)
-](01_dicos_data_types__ct__dx__tdr__.md)
+](01_dicos_data_types__ct__dx__tdr__.html)
 2. [DICOS I/O Functions
-](02_dicos_i_o_functions_.md)
+](02_dicos_i_o_functions_.html)
 3. [Network Communication
-](03_network_communication_.md)
+](03_network_communication_.html)
 4. [Multidimensional Data Structures
-](04_multidimensional_data_structures_.md)
+](04_multidimensional_data_structures_.html)
 5. [Geometry Representation
-](05_geometry_representation_.md)
+](05_geometry_representation_.html)
 6. [Data Processing Callbacks
-](06_data_processing_callbacks_.md)
+](06_data_processing_callbacks_.html)
 7. [Error Handling
-](07_error_handling_.md)
+](07_error_handling_.html)
 8. [Memory Management
-](08_memory_management_.md)
+](08_memory_management_.html)
 
 
 ---
